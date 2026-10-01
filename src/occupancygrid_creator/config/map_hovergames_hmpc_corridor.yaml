@@ -1,0 +1,68 @@
+occupancygrid_creator_node:
+  ros__parameters:
+    gridmap:
+      frequency: 1.0
+      map_id: "map"
+      size_x: 12.0
+      size_y: 12.0
+      resolution: 0.01
+      map_origin_x: 0.0
+      map_origin_y: 0.0
+      publish_topic: "/occupancy_grid"
+
+    obstacles:
+      inflate: true
+      inflation_thickness: 0.2
+
+      create_static:
+        use: true
+
+        squares:
+          x_center: [0.0, -3.3, -2.7, -1.5, -0.9, 0.3, -0.9, 0.3, 0.9, 2.1, 2.7]
+          y_center: [0.0, -2.1, -0.9, -0.3, 0.9, 1.5, -2.7, -2.1, -0.9, -0.3, 0.9]
+          length: [10.0, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6]
+          width: [8.5, 1.8, 1.8, 1.8, 1.8, 1.8, 1.8, 1.8, 1.8, 1.8, 1.8]
+          orientation_deg: [0.0, 0.0, 90.0, 0.0, 90.0, 0.0, 90.0, 0.0, 90.0, 0.0, 90.0]
+          line_thickness: [0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01]
+          names:
+            - "bounds"
+            - "rectangle3x1_0"
+            - "rectangle3x1_1"
+            - "rectangle3x1_2"
+            - "rectangle3x1_3"
+            - "rectangle3x1_4"
+            - "rectangle3x1_5"
+            - "rectangle3x1_6"
+            - "rectangle3x1_7"
+            - "rectangle3x1_8"
+            - "rectangle3x1_9"
+
+      receiving_position:
+        use: true
+
+
+
+        rectangles:
+          topics:
+            - "/obstacles/rectangle2x1_0"
+            - "/obstacles/rectangle2x1_1"
+          lengths: [1.2, 1.2]
+          widths: [0.6, 0.6]
+          line_thickness: [0.01, 0.01, 0.01]
+
+
+
+      receiving_position_gazebo:
+        use: false
+        topic: "/gazebo/model_states"
+        radius: 0.5
+
+    recording:
+
+      static_square_indices_to_record: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+    visualization:
+
+      static_square_indices_to_visualize: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+      marker_color: [0.7, 0.7, 0.7, 1.0]
+      marker_z: 1.8

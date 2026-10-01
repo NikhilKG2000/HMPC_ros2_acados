@@ -1,0 +1,58 @@
+occupancygrid_creator_node:
+  ros__parameters:
+    gridmap:
+      frequency: 1.0
+      map_id: "map"
+      size_x: 12.0
+      size_y: 12.0
+      resolution: 0.01
+      map_origin_x: 0.0
+      map_origin_y: 0.0
+      publish_topic: "/occupancy_grid"
+
+    obstacles:
+      inflate: true
+      inflation_thickness: 0.2
+
+      create_static:
+        use: true
+
+
+
+        squares:
+          x_center: [0.0, -1.2, 1.2]
+          y_center: [0.0, 0.1, -0.1]
+          length: [8.0, 0.6, 0.6]
+          width: [7.0, 1.2, 1.2]
+          orientation_deg: [0.0, 30.0, 30.0]
+          line_thickness: [0.01, 0.01, 0.01]
+          names: ["bounds", "rectangle2x1_0", "rectangle2x1_1"]
+
+      receiving_position:
+        use: true
+
+
+
+        rectangles:
+          topics:
+            - "/obstacles/rectangle2x1_0"
+            - "/obstacles/rectangle2x1_1"
+          lengths: [1.2, 1.2]
+          widths: [0.6, 0.6]
+          line_thickness: [0.01, 0.01, 0.01]
+
+
+
+      receiving_position_gazebo:
+        use: false
+        topic: "/gazebo/model_states"
+        radius: 0.5
+
+    recording:
+        static_square_indices_to_record: [1, 2]
+
+    visualization:
+
+      static_square_indices_to_visualize: [1, 2]
+      marker_color: [0.7, 0.7, 0.7, 1.0]
+      marker_z: 1.8

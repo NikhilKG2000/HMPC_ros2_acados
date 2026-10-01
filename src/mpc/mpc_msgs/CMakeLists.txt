@@ -1,0 +1,27 @@
+cmake_minimum_required(VERSION 3.8)
+project(mpc_msgs)
+
+find_package(ament_cmake REQUIRED)
+find_package(geometry_msgs REQUIRED)
+find_package(rosidl_default_generators REQUIRED)
+find_package(std_msgs REQUIRED)
+find_package(builtin_interfaces REQUIRED)
+
+rosidl_generate_interfaces(${PROJECT_NAME}
+  "msg/ConstraintsOverHorizon.msg"
+  "msg/Float64Array.msg"
+  "msg/GoalPose.msg"
+  "msg/MpcHeader.msg"
+  "msg/ReferenceTrajectoryConstraints.msg"
+  "msg/ScalarOverHorizon.msg"
+  "msg/StartMpcLayer.msg"
+  "msg/TrajectoryOverHorizon.msg"
+  DEPENDENCIES
+    builtin_interfaces
+    geometry_msgs
+    std_msgs
+)
+
+ament_export_dependencies(rosidl_default_runtime)
+
+ament_package()

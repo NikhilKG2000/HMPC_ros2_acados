@@ -1,0 +1,6 @@
+# Profiling
+profiling/*.json
+
+# Python
+__pycache__/
+*.py[cod]

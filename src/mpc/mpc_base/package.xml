@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>mpc_base</name>
+  <version>0.0.1</version>
+  <description>The mpc_base package</description>
+
+  <maintainer email="d.benders@tudelft.nl">Dennis Benders</maintainer>
+  <author>Dennis Benders</author>
+  <author>Thijs Niesten</author>
+  <license>MIT</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>eigen</depend>
+  <depend>mpc_msgs</depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

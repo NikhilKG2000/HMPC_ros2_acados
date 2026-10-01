@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>decomp_util</name>
+  <version>1.0.0</version>
+  <description>The decomp_util package</description>
+
+  <maintainer email="sikang@seas.upenn.edu">sikang</maintainer>
+  <author>Dennis Benders</author>
+  <author>Thijs Niesten</author>
+
+  <license>BSD 3-Clause</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>eigen</depend>
+  <depend>mpc_tools</depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
