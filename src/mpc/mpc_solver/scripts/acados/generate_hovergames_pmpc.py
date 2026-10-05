@@ -157,6 +157,7 @@ def create_ocp(output_directory: Path) -> AcadosOcp:
     ocp.solver_options.qp_solver = "PARTIAL_CONDENSING_HPIPM"
     ocp.solver_options.nlp_solver_type = "SQP"
     ocp.solver_options.nlp_solver_max_iter = 300
+    ocp.solver_options.nlp_solver_tol_stat = 1.0e-5
     ocp.solver_options.hessian_approx = "EXACT"
     ocp.solver_options.regularize_method = "CONVEXIFY"
     ocp.solver_options.integrator_type = "DISCRETE"
